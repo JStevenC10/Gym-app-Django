@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="web site icon" href=" {% static 'img/gym.png'%} ">
+    <title> {% block title %} Super Gym {% endblock %} </title>
+</head>
+<body>
+    <h1>WELCOME TO THE GYM!</h1>
+    <nav>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'register'%}">Register</a></li>
+        <li><a href="{% url 'login'%}">Login</a></li>
+        <li><a href="{% url 'clients'%}">Clients</a></li>
+    </nav>
+
+    
+
+    {% block content %}
+    {% endblock  %}
+
+    <footer> 
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Tik Tok</a></li>
+    </footer>
+</body>
+</html>

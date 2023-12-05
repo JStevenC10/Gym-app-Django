@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Clients {% endblock  %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>NICKNAME</th>
+            <th>CC</th>
+        </tr>
+        
+        {% for i in clients  %}
+            <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.surname}}</td>
+            {% if i.nickname %}
+                <td>{{i.nickname}}</td>
+            {% else %}
+                <td></td>
+            {% endif %}
+            <td>{{i.cc}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -30,9 +30,10 @@ MESSAGE22 = 'Si no estás dispuesto a sacrificar lo cotidiano, debes conformarte
 MESSAGE23 = 'Nuestra tarea en la vida no es vencer a los demás, sino superarnos a nosotros mismos'
 MESSAGE24 = 'No esperes el momento perfecto, has que el momento sea perfecto'
 MESSAGE25 = 'El talento te abandona si no trabajas duro todos los días por lo que quieres conseguir'
+MESSAGE26 = 'Te dejaron por otr@?, hoy toca corazon al fallo!'
 
 MOTIVATION = []
 add_list_messages(MOTIVATION, MESSAGE1, MESSAGE2, MESSAGE3, MESSAGE4, MESSAGE5, MESSAGE6, \
                   MESSAGE7, MESSAGE8, MESSAGE9, MESSAGE10, MESSAGE11, MESSAGE12, MESSAGE13, \
                   MESSAGE14, MESSAGE15, MESSAGE16, MESSAGE17, MESSAGE18, MESSAGE19, MESSAGE20, \
-                    MESSAGE21, MESSAGE22, MESSAGE23, MESSAGE24, MESSAGE25)
+                    MESSAGE21, MESSAGE22, MESSAGE23, MESSAGE24, MESSAGE25, MESSAGE26)

@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    height: 45px;
+    align-items: center;
+}
+
+nav {
+    margin-top: 5px;
+    height: 45px;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a, nav a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: cadetblue;
+    font-size: 30px;
+}
+
+footer {
+    margin-top: 5px;
+    height: 45px;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

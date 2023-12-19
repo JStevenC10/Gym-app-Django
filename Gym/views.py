@@ -74,4 +74,11 @@ def pay_month(request, *args, **kwargs):
         client.save()
         return redirect('welcome', cc=client.cc, name=client.name)
 
-
+# DELETE CLIENT
+def delete_client(request, *args, **kwargs):
+    client = ClientGym.objects.filter(cc=kwargs['cc']).first()
+    if client:
+        client.delete()
+        return redirect(to=all_clients)
+    else:
+        return redirect(to=all_clients)

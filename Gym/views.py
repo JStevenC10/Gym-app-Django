@@ -3,7 +3,7 @@ import random
 from django.shortcuts import render, redirect
 
 from .forms import ClientGymForm, LoginForm
-from .messages import MOTIVATION
+from .messages import MOTIVATION, NOT_PAYED, NOT_PAYED_2
 from .models import ClientGym
 
 # Create your views here.
@@ -56,6 +56,9 @@ def welcome(request, *args, **kwargs):
             'phrase': phrase,
             'days': days
         }
+        # MESSAGE FOR CLIENT NOT PAYED
+        if not client.payed:
+            context['phrase'] = random.choice([NOT_PAYED, NOT_PAYED_2])
         return render(request, 'welcome.html', context)
     else:
         return redirect(to=login)

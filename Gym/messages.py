@@ -32,6 +32,10 @@ MESSAGE24 = 'No esperes el momento perfecto, has que el momento sea perfecto'
 MESSAGE25 = 'El talento te abandona si no trabajas duro todos los días por lo que quieres conseguir'
 MESSAGE26 = 'Te dejaron por otr@?, hoy toca corazon al fallo!'
 
+# NO PAY MESSAGE
+NOT_PAYED = "Sin mensualidad no hay mensaje! lo siento..."
+NOT_PAYED_2 = "Primero paga, luego te motivo"
+
 MOTIVATION = []
 add_list_messages(MOTIVATION, MESSAGE1, MESSAGE2, MESSAGE3, MESSAGE4, MESSAGE5, MESSAGE6, \
                   MESSAGE7, MESSAGE8, MESSAGE9, MESSAGE10, MESSAGE11, MESSAGE12, MESSAGE13, \

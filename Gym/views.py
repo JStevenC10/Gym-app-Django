@@ -1,6 +1,7 @@
 import random
 
 from django.shortcuts import render, redirect
+from django.db.models import Q
 
 from .forms import ClientGymForm, LoginForm
 from .messages import MOTIVATION, NOT_PAYED, NOT_PAYED_2
@@ -13,12 +14,20 @@ def home(request, *args, **kwargs):
     return render(request, 'home.html', {})
 
 def all_clients(request, *args, **kwargs):
-    clients = ClientGym.objects.all()
-    if clients:
-        return render(request, 'all_clients.html', {'clients': clients})
+    if request.method == 'GET':
+        clients = ClientGym.objects.all()
+        if clients:
+            return render(request, 'all_clients.html', {'clients': clients})
+        else:
+            return render(request, 'all_clients.html')
     else:
-        message = 'Ups! clients not founds!!'
-        return render(request, 'all_clients.html', {'message': message})
+        search = request.POST['search']
+        clients = ClientGym.objects.filter(Q(name__icontains=search) | Q(surname__icontains=search))
+        if clients:
+            return render(request, 'all_clients.html', {'clients': clients})
+        else:
+            return render(request, 'all_clients.html')
+
 
 # REGISTER NEW CLIENT GYM
 def register(request, *args, **kwargs):

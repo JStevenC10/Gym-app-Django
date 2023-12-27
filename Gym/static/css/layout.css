@@ -23,6 +23,7 @@ nav {
 a, nav a {
     text-decoration: none;
     color: black;
+    list-style: none;
 }
 
 a:hover {
@@ -35,6 +36,13 @@ footer {
     height: 45px;
     background-color: burlywood;
     display: flex;
+    height: 45px;
     justify-content: space-around;
     align-items: center;
+}
+
+footer a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
 }

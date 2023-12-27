@@ -1,19 +1,21 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: cursive !important;
 }
+
 
 h1{
     display: flex;
     justify-content: center;
     background-color: cadetblue;
-    height: 45px;
+    border-bottom: 3px solid black;
+    height: 60px;
     align-items: center;
 }
 
 nav {
-    margin-top: 5px;
-    height: 45px;
+    height: 50px;
     background-color: burlywood;
     display: flex;
     justify-content: space-around;

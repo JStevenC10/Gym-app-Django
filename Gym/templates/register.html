@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block stylesh %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block title %} Register {% endblock  %}
+
+{% block content %}
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <p>Welcome!</p>
+        <img src=" {% static 'img/women.jpeg' %}" alt="">
+        {{form.as_p}}
+        <button type="submit">Register!</button>
+    </form>
+{% endblock %}

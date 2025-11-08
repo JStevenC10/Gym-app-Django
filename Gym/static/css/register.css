@@ -1,0 +1,39 @@
+form {
+    margin: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form p {
+    margin: 5px;
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+form img {
+    margin: 5px;
+    padding: 5px;
+}
+
+form input {
+    margin: 5px;
+    padding: 5px;
+    transition: border 0.5s;
+}
+
+form input:hover {
+    border: 2px solid burlywood;
+}
+
+form button {
+    font-size: 20px;
+    margin: 5px;
+    padding: 20px;
+    background-color: burlywood;
+    border-radius: 10px;
+}

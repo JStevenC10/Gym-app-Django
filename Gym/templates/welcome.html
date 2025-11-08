@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block stylesh %}
+    <link rel="stylesheet" href="{% static 'css/welcome.css'%}">
+{% endblock  %}
+
+{% block title %} Welcome {% endblock  %}
+
+{% block content %}
+    <section>
+        {% if client.nickname %}
+            <h2>Welcome {{client.nickname}}</h2>
+        {% else %}
+            <h2>Welcome {{client.name}}</h2>
+        {% endif %}
+        {% if not client.payed %}
+            <h2>Available days: 0</h2>
+            <p>please pay your monthly payment</p>
+            <a href="{% url 'pay' client.cc %}">Pay here</a>
+        {% else %}
+            <h2>Available days: {{days}}</h2>
+        {% endif %}
+        <img src="{% static 'img/welcome.jpeg' %}" alt="">
+        <h3>{{phrase}}</h3>
+        <a href="{% url 'home' %}">Back</a>
+    </section>
+{% endblock %}
+
+
+

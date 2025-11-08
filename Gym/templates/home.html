@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock  %}
+{% block stylesh %} <link rel="stylesheet" href=" {% static 'css/home.css'%}">{% endblock %}
+
+
+{% block content %}
+    <section>
+        <img src="{% static 'img/home.jpg' %}" alt="">
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login'%}">Login</a>
+    </section>
+{% endblock %}

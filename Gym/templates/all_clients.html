@@ -27,6 +27,7 @@
       <th scope="col">NICKNAME</th>
       <th scope="col">CC</th>
       <th scope="col">JOINED DATE</th>
+      <th scope="col">AVAILABLE DAYS</th>
       <th scope="col">ACTION</th>
       <th scope="col">LAST CHECK IN</th>
       <th scope="col">LOGOUT</th>
@@ -44,6 +45,7 @@
             {% endif %}
             <td>{{i.cc}}</td>
             <td>{{i.start_date}}</td>
+            <td>{{i.days_available}}</td>
             <td><a class="btn" href="{% url 'delete_client' i.cc %}">DELETE</a></td>
             {% if i.status %}
               <td><button class="btn btn-success">ON</button> {{i.check_in}}</td>

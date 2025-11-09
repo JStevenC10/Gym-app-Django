@@ -14,7 +14,7 @@ class LoginForm(forms.ModelForm):
 class ClientGymForm(forms.ModelForm):
     class Meta:
         model = ClientGym
-        exclude = ('start_date', 'finish_date')
+        exclude = ('start_date', 'finish_date', 'status', 'check_in')
     
     # METHOD SAVE FOR ALTER DATES OF CLIENT
     def save(self, commit=True):

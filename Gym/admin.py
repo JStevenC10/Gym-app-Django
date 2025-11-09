@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import ClientGym
+from .models import ClientGym, Trainers
 # Register your models here.
-admin.site.register(ClientGym)
+admin.site.register([ClientGym, Trainers]) 

@@ -51,6 +51,7 @@ THIRDS_APPS = [
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRDS_APPS
 
 MIDDLEWARE = [
+    'Gym.middleware.Page404Middleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

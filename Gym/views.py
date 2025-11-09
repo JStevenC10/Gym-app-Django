@@ -6,13 +6,21 @@ from django.utils import timezone
 
 from .forms import ClientGymForm, LoginForm
 from .messages import MOTIVATION, NOT_PAYED, NOT_PAYED_2
-from .models import ClientGym
+from .models import ClientGym, Trainers
 
 # Create your views here.
 
 # HOME APP
 def home(request, *args, **kwargs):
     return render(request, 'home.html', {})
+
+def page404(request, *args, **kwargs):
+    trainers_counter = Trainers.objects.filter(active=True)
+    context = {
+        "trainers_availables": trainers_counter.count()
+    }
+    return render(request, "page404.html", context=context)
+
 
 # CLIENTS TABLE AND SEARCH A CLIENT 
 def all_clients(request, *args, **kwargs):

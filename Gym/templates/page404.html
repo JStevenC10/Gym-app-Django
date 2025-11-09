@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 · Gimnasio</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --accent:cadetblue;
+      --highlight:burlywood;
+      --text:#2a2a2a;
+    }
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    body{background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;padding:32px}
+
+    .card{max-width:980px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;background:#f9f9f9;padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1);border:1px solid #e0e0e0}
+
+    .left{padding:8px}
+    h1{font-size:88px;margin:0;line-height:0.9;letter-spacing:-2px;color:var(--accent)}
+    h2{margin:6px 0 18px;font-size:20px;color:var(--highlight)}
+    p{color:#555;margin:0 0 18px}
+
+    .actions{display:flex;gap:12px}
+    .btn{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:600;transition:0.2s}
+    .btn:hover{background:#4c9199}
+    .btn.secondary{background:var(--highlight);color:#333}
+
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{background:#fff6eb;padding:10px 12px;border-radius:10px;font-size:14px;border:1px solid #f0e0c0}
+    .stat strong{display:block;font-size:18px;color:var(--accent)}
+
+    .right{display:flex;align-items:center;justify-content:center}
+    .mock{
+      width:100%;height:100%;max-width:420px;border-radius:12px;overflow:hidden;border:1px solid #ddd;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:10px
+    }
+    .mock img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+    .mock .caption{color:#666;font-size:13px;text-align:center}
+
+    footer{grid-column:1 / -1;margin-top:6px;text-align:center;color:#777;font-size:13px}
+
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      h1{font-size:64px}
+      .mock img{height:180px}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="left">
+      <h1>404</h1>
+      <h2>Page not found!</h2>
+      <p>we're sorry! — this page doesn't exist<strong> App gym</strong>Try another path or go home page!</p>
+
+      <div class="actions">
+        <button class="btn"><a href="{% url 'home'%}">Back home</a></button>
+        <button class="btn secondary"><a href="{% url 'login' %}">Login</a></button>
+      </div>
+
+      <div class="stats" aria-hidden="true">
+        <div class="stat"><span>Join us</span><strong><a href="{%url 'register'%}">join</a></strong></div>
+        <div class="stat"><span>Trainers</span><strong>{{trainers_availables}}</strong></div>
+        <div class="stat"><span>Gym</span><strong>Verified</strong></div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="mock">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.H-A4Wmqn7dJ3IRgG4PeRHgHaE7?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Gimnasio con pesas" />
+        <div class="caption">If you need help, look for your trainer closer! don't be shy</div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

@@ -2,6 +2,7 @@ import random
 
 from django.shortcuts import render, redirect
 from django.db.models import Q
+from django.contrib import messages
 from django.utils import timezone
 
 from .forms import ClientGymForm, LoginForm
@@ -30,6 +31,7 @@ def all_clients(request, *args, **kwargs):
         if clients:
             return render(request, 'all_clients.html', {'clients': clients})
         else:
+            messages.warning(request, "Users not founds!")
             return render(request, 'all_clients.html')
     # SEARCH A CLIENT WITH POST METHOD 
     else:
@@ -38,6 +40,7 @@ def all_clients(request, *args, **kwargs):
         if clients:
             return render(request, 'all_clients.html', {'clients': clients})
         else:
+            messages.warning(request, "Users not founds!")
             return render(request, 'all_clients.html')
 
 
@@ -47,6 +50,7 @@ def register(request, *args, **kwargs):
         new_client = ClientGymForm(data=request.POST)
         if new_client.is_valid():
             new_client.save()
+            messages.success(request, "Try your new credentials!")
             return redirect(to=login)
         else:
             return redirect(to=register)
@@ -64,6 +68,7 @@ def login(request, *args, **kwargs):
             client.save()
             return redirect('welcome', cc=client.cc, name=client.name)
         else:
+            messages.info(request, "It seems there is not user!")
             return redirect(to=login)
     else:
         form = LoginForm
@@ -83,6 +88,7 @@ def logout(request, *args, **kwargs):
 
 # WELCOME FOR CLIENTS GYM
 def welcome(request, *args, **kwargs):
+    messages.success(request, "login success! enojoy your workout!")
     phrase = random.choice(MOTIVATION)
     client = ClientGym.objects.filter(cc=kwargs['cc']).first()
     if client:

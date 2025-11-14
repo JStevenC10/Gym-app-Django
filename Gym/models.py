@@ -31,7 +31,8 @@ class ClientGym(models.Model):
     # RETURN DAYS AVAILABLES 
     def days_available(self):
         if self.payed:
-            return abs(self.finish_date - datetime.today().date())
+            return abs((self.finish_date - datetime.today().date()).days)
+
         else:
             return 0
     

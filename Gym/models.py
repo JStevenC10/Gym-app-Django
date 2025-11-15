@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from django.utils import timezone
 
 from django.db import models
 
@@ -9,9 +10,18 @@ class Trainers(models.Model):
     joined_date = models.DateField(auto_now_add=True)
     birth_date = models.DateField(auto_now=False, auto_now_add=False)
     active = models.BooleanField(default=False)
+    picture = models.ImageField(upload_to="coachs", blank=True, null=True)
 
     def __str__(self):
         return f"{self.full_name} - ACTIVE: {self.active}"
+
+    @property
+    def get_trainer_age(self):
+        current_date = timezone.now().date()
+        age = current_date.year - self.birth_date.year
+        if (current_date.month, current_date.day) < (self.birth_date.month, self.birth_date.day):
+            age -= 1
+        return age
 
 # GYM CLIENT
 class ClientGym(models.Model):
@@ -32,7 +42,6 @@ class ClientGym(models.Model):
     def days_available(self):
         if self.payed:
             return abs((self.finish_date - datetime.today().date()).days)
-
         else:
             return 0
     

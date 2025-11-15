@@ -22,12 +22,21 @@ def page404(request, *args, **kwargs):
     }
     return render(request, "page404.html", context=context)
 
+# SHOW ALL COACHS
+def show_coachs(request, *args, **kwargs):
+    coaches = Trainers.objects.all().order_by("birth_date")
+    context = {
+        "trainers": coaches,
+    }
+    return render(request, "trainers.html", context=context)
+
+
 
 # CLIENTS TABLE AND SEARCH A CLIENT 
 def all_clients(request, *args, **kwargs):
     # ALL CLIENTS
     if request.method == 'GET':
-        clients = ClientGym.objects.all()
+        clients = ClientGym.objects.all().order_by("-status")
         if clients:
             return render(request, 'all_clients.html', {'clients': clients})
         else:
